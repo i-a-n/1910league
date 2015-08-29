@@ -1,3 +1,13 @@
+/* less vars */
+@link-color:    #986630;
+@light-bg:      #f9f9f9;
+@dark-bg:       #f7f4f2;
+
+@mobile-bp:     ~"only screen and (max-width: 969px)";
+
+
+
+
 /* global */
 body {
     font-family: 'Arbutus Slab', serif;
@@ -20,7 +30,7 @@ h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5, .subtitle, p {
     letter-spacing: 1.05px;
 }
 a, a:visited, a:active {
-    color: #986630;
+    color: @link-color;
 }
 
 
@@ -35,26 +45,32 @@ a, a:visited, a:active {
     background-image: url('../img/1910-hero-compressor.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-}
-.content {
-    width: 925px;
-    margin: 0 auto;
-}
-.copybox {
-    background-color: #181818;
-    color: #ffffff;
-    max-width: 50%;
-    text-align: center;
-    opacity: .965;
-    box-shadow: 4px 4px 9px rgba(0,0,0,.23);
-    bottom: 26.6px;
-    position: absolute;
-}
-.copy {
-    margin: 12px 30px;
-    display: inline-block;
-    text-align: left;
-    line-height: 38px;
+
+    @media @mobile-bp {
+        background-image: url('../img/1910-hero-mobile-compressor.jpg');
+    }
+
+    .copybox {
+        background-color: #181818;
+        color: #ffffff;
+        max-width: 50%;
+        text-align: center;
+        opacity: .965;
+        box-shadow: 4px 4px 9px rgba(0,0,0,.23);
+        bottom: 26.6px;
+        position: absolute;
+
+        @media @mobile-bp {
+            max-width: 88%;
+            min-width: 450px;
+        }
+    }
+    .copy {
+        margin: 12px 30px;
+        display: inline-block;
+        text-align: left;
+        line-height: 38px;
+    }
 }
 
 
@@ -63,32 +79,54 @@ a, a:visited, a:active {
 /* structure */
 .grid {
     padding: 30px 14px;
-}
-.grid:before, .grid:after {
+    
+    &:before, &:after {
     content: " ";
     display: table;
     clear: both;
+    }
+}
+.content {
+    width: 925px;
+    margin: 0 auto;
+
+    @media @mobile-bp {
+        width: 525px;
+    }
 }
 .section {
     width: 100%;
     max-width: 100%;
     padding: 93px 0 53px;
-    background-color: #f9f9f9;
+    background-color: @light-bg;
 }
 .section--dark {
-    background-color: #f7f4f2;
+    background-color: @dark-bg;
 }
 .spacer--vertical {
     height: 36px;
+    
+    @media @mobile-bp {
+        height: 0px;
+    }
 }
 .cell {
     width: 48%;
     display: inline;
     float: left;
+    
+    @media @mobile-bp {
+        width: 100%;
+    }
 }
 .cell--extraPadding {
     margin-left: 4%;
     padding-top: 37px;
+
+    @media @mobile-bp {
+        margin-left: 0;
+        padding-top: 17px;
+    }
 }
 
 
@@ -118,6 +156,11 @@ a, a:visited, a:active {
     font-size: 16.8px;
     line-height: 25.2px;
     color: #282828;
+
+    @media @mobile-bp {
+        font-size: 20px;
+        line-height: 30px;
+    }
 }
 .justify {
     text-align: justify;
@@ -139,6 +182,10 @@ a, a:visited, a:active {
 .logo--header {
     background-position: center;
     height: 182.7px;
+
+    @media @mobile-bp {
+        height: 160px;
+    }
 }
 .logo--gold {
     background-image: url('../img/logo-gold--med.png');
@@ -150,6 +197,10 @@ a, a:visited, a:active {
     position: absolute;
     right: 28px;
     top: 21px;
+
+    @media @mobile-bp {
+        display: none;
+    }
 }
 .map {
     box-shadow: 2px 2px 0px #fafafa, -1px -1px 0px #ffffff, 2px 2px 5px rgba(177,139,107,.38)

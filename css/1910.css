@@ -1,3 +1,4 @@
+/* less vars */
 /* global */
 body {
   font-family: 'Arbutus Slab', serif;
@@ -48,11 +49,12 @@ a:active {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.content {
-  width: 925px;
-  margin: 0 auto;
+@media only screen and (max-width: 969px) {
+  .hero {
+    background-image: url('../img/1910-hero-mobile-compressor.jpg');
+  }
 }
-.copybox {
+.hero .copybox {
   background-color: #181818;
   color: #ffffff;
   max-width: 50%;
@@ -62,7 +64,13 @@ a:active {
   bottom: 26.6px;
   position: absolute;
 }
-.copy {
+@media only screen and (max-width: 969px) {
+  .hero .copybox {
+    max-width: 88%;
+    min-width: 450px;
+  }
+}
+.hero .copy {
   margin: 12px 30px;
   display: inline-block;
   text-align: left;
@@ -78,6 +86,15 @@ a:active {
   display: table;
   clear: both;
 }
+.content {
+  width: 925px;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 969px) {
+  .content {
+    width: 525px;
+  }
+}
 .section {
   width: 100%;
   max-width: 100%;
@@ -90,14 +107,30 @@ a:active {
 .spacer--vertical {
   height: 36px;
 }
+@media only screen and (max-width: 969px) {
+  .spacer--vertical {
+    height: 0px;
+  }
+}
 .cell {
   width: 48%;
   display: inline;
   float: left;
 }
+@media only screen and (max-width: 969px) {
+  .cell {
+    width: 100%;
+  }
+}
 .cell--extraPadding {
   margin-left: 4%;
   padding-top: 37px;
+}
+@media only screen and (max-width: 969px) {
+  .cell--extraPadding {
+    margin-left: 0;
+    padding-top: 17px;
+  }
 }
 /* typography */
 .withSubtitle {
@@ -123,6 +156,12 @@ a:active {
   line-height: 25.2px;
   color: #282828;
 }
+@media only screen and (max-width: 969px) {
+  .section p {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
 .justify {
   text-align: justify;
 }
@@ -140,6 +179,11 @@ a:active {
   background-position: center;
   height: 182.7px;
 }
+@media only screen and (max-width: 969px) {
+  .logo--header {
+    height: 160px;
+  }
+}
 .logo--gold {
   background-image: url('../img/logo-gold--med.png');
 }
@@ -150,6 +194,11 @@ a:active {
   position: absolute;
   right: 28px;
   top: 21px;
+}
+@media only screen and (max-width: 969px) {
+  .logo--topRight {
+    display: none;
+  }
 }
 .map {
   box-shadow: 2px 2px 0px #fafafa, -1px -1px 0px #ffffff, 2px 2px 5px rgba(177, 139, 107, 0.38);
