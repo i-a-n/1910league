@@ -48,7 +48,7 @@ function ajaxHandler(path,payload) {
 
 // contact adding
 function addContact(mailingList, address) {
-    ajaxHandler( "http://union.io/1910/mailgun-api.php", "action=add_member&list="+mailingList+"&address="+address )
+    ajaxHandler( "https://union.io/1910/mailgun-api.php", "action=add_member&list="+mailingList+"&address="+address )
         .done( function() {
             $(".ctaMessage--2").slideUp();
             $(".messageDiv").html("Email successfully added").removeClass('messageDiv--hide');
